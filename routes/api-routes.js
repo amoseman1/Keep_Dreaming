@@ -1,4 +1,5 @@
 //get, post, put, delete routes
+
 const db = require('../models');
 
 module.exports = (app) => {
@@ -44,3 +45,4 @@ module.exports = (app) => {
         }).then((results) => res.status(200).json(results));
     });
 };
+
