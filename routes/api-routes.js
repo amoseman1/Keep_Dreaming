@@ -4,6 +4,9 @@ const db = require('../models');
 
 module.exports = (app) => {
     //GET routes
+
+    
+
     app.get('/api/users', (req, res) => {
         db.Users.findAll({}).then((results) => res.status(200).json(results));
     });
