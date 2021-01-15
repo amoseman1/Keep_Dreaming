@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "Dsmh2020!",
-    "database": "travelDB",
+    "password": "",
+    "database": "travel_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
