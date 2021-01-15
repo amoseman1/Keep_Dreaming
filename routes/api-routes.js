@@ -9,16 +9,18 @@ module.exports = (app) => {
     });
 
     app.get('/api/destinations/:location/:activiy_genre/:activity_type', (req, res) => {       ///res.render --> handlebars
-        db.Destinations.findAll({}).then((results) => res.status(200).json(results));
-    });  
-//     findOne({where { location: req.params.location,
-//     activity_genre: req.params.activity_genre,
-//     activity_type: req.params.activity_type,
-//   }})  
-
-    app.get('/api/activitygenres', (req, res) => {
-        db.Activitygenres.findAll({}).then((results) => res.status(200).json(results));
+        db.Destinations.findOne({
+            where: {
+                location: req.params.location,
+                activity_genre: req.params.activity_genre,
+                activity_type: req.params.activity_type,
+            },
+        }).then((results) => res.status(200).json(results)); //res.render
     });
+
+    // app.get('/api/activitygenres', (req, res) => {
+    //     db.Activitygenres.findAll({}).then((results) => res.status(200).json(results));
+    // });
 
 
     //POST route creates user info for DB
