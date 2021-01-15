@@ -7,13 +7,15 @@
 // };
 
 //const { DataTypes } = require("sequelize/types")
-
 module.exports = (sequelize, DataTypes) => {
-    const User = sequelize.define('User', {
-        username: DataTypes.STRING,
-        email: DataTypes.STRING
+    const Destination = sequelize.define("Destination", {
+        location: DataTypes.STRING,
+        cost_pp: DataTypes.STRING,
+        activity_genre: DataTypes.STRING,
+        activity_type: DataTypes.STRING,
+        number_people: DataTypes.INTEGER,
     });
-    return User;
+    return Destination;
 };
 
 module.exports = (sequelize, DataTypes) => {
@@ -24,20 +26,9 @@ module.exports = (sequelize, DataTypes) => {
         partying: DataTypes.BOOLEAN,
         spiritual: DataTypes.BOOLEAN,
         cultural: DataTypes.BOOLEAN,
+        //add family friendly genre
     });
     return ActivityGenre;
 };
-
-module.exports = (sequelize, DataTypes) => {
-    const Destination = sequelize.define('Destination', {
-        location: DataTypes.STRING,
-        cost: DataTypes.STRING,
-        // hotel: DataTypes.STRING,
-        // flight: DataTypes.STRING,
-        // carRental: DataTypes.STRING
-    });
-    return Destination;
-};
-
 
 

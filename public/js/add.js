@@ -13,7 +13,7 @@ const initializeRows = () => {
 };
 
 const getDests = () => {
-    fetch('/api/destinations', {
+    fetch(`/api/destinations/${locationvariable}/${activity_genrevariable}/${activity_typevariable}`, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',

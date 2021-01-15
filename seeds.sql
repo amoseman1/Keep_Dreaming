@@ -1,0 +1,11 @@
+INSERT INTO destinations (location, cost_pp, activity_genre, activity_type, activity_title, number_people) VALUES ("London", 2000, "abroad", "cultural", "museums", 2), ("Bali", 4000, "abroad", "adrenaline","diving", 1), ("Austin", 500, "city", "partying", "concert", 4), ("Denver", 400, "city", "partying", "sporting event", 2),
+("San Diego", 600, "beach", "active", "surfing", 2),
+("Taos", 300, "mountains", "active", "skiing", 4),
+("Thailand", 1500, "abroad", "volunteering", "charity work", 1),
+("Chicago", 400, "city", "cultural", "museums", 2),
+("Glacier National Park", 200, "mountains", "active", "hiking", 3),
+("Sicily", 5000, "beach", "cultural", "cooking classes", 1),
+("Morocco", 3000, "city", "active", "hiking", 2),
+("Scotland", 2500, "mountains", "active", "biking", 6),
+("Ibiza", 3000, "beach", "partying", "full moon party", 2),
+("Grand Canyon", 1500, "mountains", "active", "rafting", 10);

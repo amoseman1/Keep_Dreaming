@@ -1,13 +1,22 @@
 DROP DATABASE IF EXISTS `travelDB`;
 CREATE DATABASE `travelDB`;
 
+CREATE TABLE users (
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    username VARCHAR(30) NOT NULL,
+    email VARCHAR(50) NOT NULL
+);
+
 CREATE TABLE destinations (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     location VARCHAR(100),
-    cost INT(20)
+    cost_pp INT(20),
+    activity_genre VARCHAR(50),
+    activity_type VARCHAR(200),
+    number_people INT(10)
 
 );
 
-INSERT INTO destinations VALUES ("London", 2000), ("Bali", 4000), ("Austin", 500), ("Denver", 400);
+INSERT INTO destinations VALUES (2,"London", 2000, "abroad", "museums"), (1,"Bali", 4000, "abroad", "diving"), (4, "Austin", 500, "city", "concert"), (2,"Denver", 400, "city", "sports game");
 
 SELECT * FROM destinations;
