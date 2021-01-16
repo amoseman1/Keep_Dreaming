@@ -1,1 +1,63 @@
-/* This is our code for styling for the pages */
+/* Sets browser styling and background*/
+html {
+  max-width: 1536px;
+  margin: 0 auto;
+  background-color: black;
+}
+body {
+  background-image: url(./KeepDreaming-home-background.jpg);
+  opacity: 100%;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+}
+/* Sets responsive parent flexbox container*/
+.container {
+  display: flex;
+  flex-flow: row wrap;
+  opacity: 90%;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3000px;
+  list-style: none;
+  max-width: 34.3%;
+}
+/* Sets flexbox items*/
+#questions {
+  position: absolute;
+  color: white;
+  max-width: 35%;
+  padding-top: 260px;
+}
+/* styles text in questions and answers */
+p {
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 5px black;
+}
+h4 {
+  text-align: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px white;
+  }
+  to {
+    text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px white,
+      0 0 50px white;
+  }
+}

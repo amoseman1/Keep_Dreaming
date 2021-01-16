@@ -14,21 +14,22 @@ module.exports = (sequelize, DataTypes) => {
         activity_genre: DataTypes.STRING,
         activity_type: DataTypes.STRING,
         number_people: DataTypes.INTEGER,
+        kid_friendly: DataTypes.BOOLEAN,
     });
     return Destination;
 };
 
-module.exports = (sequelize, DataTypes) => {
-    const ActivityGenre = sequelize.define('ActivityGenre', {
-        active: DataTypes.BOOLEAN,
-        adrenaline: DataTypes.BOOLEAN,
-        volunteering: DataTypes.BOOLEAN,
-        partying: DataTypes.BOOLEAN,
-        spiritual: DataTypes.BOOLEAN,
-        cultural: DataTypes.BOOLEAN,
-        //add family friendly genre
-    });
-    return ActivityGenre;
-};
+// module.exports = (sequelize, DataTypes) => {
+//     const ActivityGenre = sequelize.define('ActivityGenre', {
+//         active: DataTypes.BOOLEAN,
+//         adrenaline: DataTypes.BOOLEAN,
+//         volunteering: DataTypes.BOOLEAN,
+//         partying: DataTypes.BOOLEAN,
+//         spiritual: DataTypes.BOOLEAN,
+//         cultural: DataTypes.BOOLEAN,
+//         //add family friendly genre
+//     });
+//     return ActivityGenre;
+// };
 
 

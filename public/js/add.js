@@ -3,81 +3,92 @@ const questions = [
     {
         question: "How many people are in your party?",
         choices: [
-            { text: "1" },
-            { text: "2" },
-            { text: "3" },
-            { text: "4" },
-            { text: "5+" },
+            "1",
+            "2",
+            "3",
+            "4",
+            "5+",
         ]
     },
     {
         question: "What is your budget?",
         choices: [
-            { text: "I am Broke. Free Please" },
-            { text: "I have a small budget >$300" },
-            { text: "I have a slightly bigger budget >$750" },
-            { text: "I have a decent budget >$1000" },
-            { text: "I have a little more than a decent budget >$3000" },
-            { text: "I have a nice budget >$5000" },
-            { text: "The skys the limit <$10,000" },
+            "$0",
+            ">$300",
+            ">$750",
+            ">$1000",
+            ">$3000",
+            ">$5000",
+            "<$10000",
         ]
     },
     {
         question: "Where is your dream destination?",
         choices: [
-            { text: "Beach" },
-            { text: "Mountains" },
-            { text: "City" },
-            { text: "Going Abroad" },
-            { text: "Staycation" },
+            "Beach",
+            "Mountains",
+            "City",
+            "Abroad",
+            "Staycation",
         ]
     },
     {
         question: "What type of vacation (activity) are you looking for?",
         choices: [
-            { text: "I like to get active and move! (hiking, biking, sky diving, hang gliding, bungee jumping, paragliding, scuba diving, ziplining, etc)" },
-            { text: "Volunteering is great. (working at an animal shelter, building houses for the needy, working in a soup kitchen, building water sources for communities in need, etc )" },
-            { text: "Let's party! (concerts, sports games, bar crawls, full moon, parties, etc)" },
-            { text: "Spiritual awakenings or retreats are what I desire. (pilgrimages, churches, cathedrals, mosques, temples, meditation, shrines, etc)" },
-            { text: "I need more culture in my life. (museums, concerts, architecture, cultural events, etc )" },
-            { text: "Relax and forget it all. (beaches, spas, resorts, hot springs, etc)" },
-            { text: "Lets stay near home. (local activities, etc)" },
+            "active",
+             "adrenaline",
+            "volunteering",
+            "partying",
+            "spiritual",
+            "cultural",
         ]
     },
 
 ];
 
-const QuestionsIndex = 0
-const currentQuestion = question[currentQuestionIndex]
-//our html element to grab - empty h2
-const questionEl = document.getElementById("questiontitle");
-questionEl.textContent = currentQuestion.question
+// for (let i = 0; i < questions.length; i++) {
 
-currentQuestion.choices.forEach(function (choice, i) {
-    //dynamically create a button element , set content of button
-    element.textcontent = choice
-    //set an on click on that element which will equal the 
-    //function to (StartQuizes)
+//     let limit = questions[i].chices
+//     //var = text content of element chosen
+//     //switch (var)
+//     case (splice the < and $ off of the number string and then parseInt)
 
-    const keys = Object.keys //thid grabs all the title and choices 
-    const item = keys[i];
-    const preferences = {
-        genre: $('.genre').val,
-        location: $('.location').val,
-        //etc
-    }
-    Element.onclick = preferences[item] = this.textcontent
+// }
 
-    $('submit-btn').on('click', () => {
-        fetch(`api/destinations/${preferences.genre}/${preferences.location}`)
-            .then((results) => {
-                results.json(results)
-            }).then('something' => {
-                $('.displayGenre').val
-            })
-    })
 
-});
+
+
+// const QuestionsIndex = 0
+// const currentQuestion = question[currentQuestionIndex]
+// //our html element to grab - empty h2
+// const questionEl = document.getElementById("questiontitle");
+// questionEl.textContent = currentQuestion.question
+
+// currentQuestion.choices.forEach(function (choice, i) {
+//     //dynamically create a button element , set content of button
+//     element.textcontent = choice
+//     //set an on click on that element which will equal the 
+//     //function to (StartQuizes)
+
+//     const keys = Object.keys //thid grabs all the title and choices 
+//     const item = keys[i];
+//     const preferences = {
+//         genre: $('.genre').val,
+//         location: $('.location').val,
+//         //etc
+//     }
+//     Element.onclick = preferences[item] = this.textcontent
+
+//     $('submit-btn').on('click', () => {
+//         fetch(`api/destinations/${preferences.genre}/${preferences.location}`)
+//             .then((results) => {
+//                 results.json(results)
+//             }).then('something' => {
+//                 $('.displayGenre').val
+//             })
+//     })
+
+// });
 
 // const destContainer = document.querySelector('.dest-container');
 // const destForm = document.getElementById('dest-form');

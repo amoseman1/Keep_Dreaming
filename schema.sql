@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS `travelDB`;
-CREATE DATABASE `travelDB`;
+DROP DATABASE IF EXISTS `travel_db`;
+CREATE DATABASE `travel_db`;
 
 CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -13,7 +13,8 @@ CREATE TABLE destinations (
     cost_pp INT(20),
     activity_genre VARCHAR(50),
     activity_type VARCHAR(200),
-    number_people INT(10)
+    number_people INT(10),
+     kid_friendly BOOLEAN
 
 );
 
