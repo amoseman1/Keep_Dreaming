@@ -64,10 +64,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
     choices.forEach((button) => {
       // console.log(button);
       const body = document.getElementById("answers");
-      const buttonMaker = document.createElement("button");
+      const buttonMaker = document.createElement("a");
       buttonMaker.setAttribute("class", "button");
       buttonMaker.textContent = button;
       body.appendChild(buttonMaker);
+
+      if (i === 2) {
+        buttonMaker.setAttribute("href", "/dests");
+      }
 
       buttonMaker.addEventListener("click", function (event) {
         const userChoice = event.target.textContent;
