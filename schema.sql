@@ -13,6 +13,7 @@ CREATE TABLE destinations (
     cost_pp INT(20),
     activity_genre VARCHAR(50),
     activity_type VARCHAR(200),
+    activity_title VARCHAR(200),
     number_people INT(10),
      kid_friendly BOOLEAN
 

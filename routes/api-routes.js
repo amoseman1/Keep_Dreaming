@@ -14,17 +14,46 @@ module.exports = (app) => {
     db.Users.findAll({}).then((results) => res.status(200).json(results));
   });
 
+  // app.get(
+  //   "/api/destinations/:location/:activiy_genre/:activity_type",
+  //   (req, res) => {
+  //     ///res.render --> handlebars
+  //     db.Destinations.findOne({
+  //       where: {
+  //         location: req.params.location,
+  //         activity_genre: req.params.activity_genre,
+  //         activity_type: req.params.activity_type,
+  //       },
+  //     }).then((results) => res.status(200).json(results)); //res.render
+  //   }
+  // );
+
+  app.get("/dests", (req, res) => {
+    const destObj = {
+      destinations: [{ name: "here" }],
+    };
+    res.render("dests", destObj);
+  });
+
   app.get(
-    "/api/destinations/:location/:activiy_genre/:activity_type",
+    "/api/destinations/:cost_pp/:location/:activity_genre",
     (req, res) => {
       ///res.render --> handlebars
-      db.Destinations.findOne({
+      // const budget1 = req.params.budget;
+      db.Destination.findAll({
         where: {
+          cost_pp: req.params.cost_pp,
           location: req.params.location,
           activity_genre: req.params.activity_genre,
-          activity_type: req.params.activity_type,
+          // activity_type: req.params.activity_type,
         },
-      }).then((results) => res.status(200).json(results)); //res.render
+      }).then((results) => {
+        console.log(results);
+        const destObj = {
+          destinations: results,
+        };
+        res.render("dests", destObj);
+      }); //res.render
     }
   );
 

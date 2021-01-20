@@ -1,6 +1,6 @@
 INSERT INTO destinations (location, cost_pp, activity_genre, activity_type, activity_title, number_people, kid_friendly) 
-VALUES ("London", 2000, "abroad", "cultural", "museums", 2, true), 
-("Bali", 4000, "abroad", "adrenaline","diving", 1, false), 
+VALUES ("London", 750, "abroad", "cultural", "museums", 2, true), 
+("Bali", 750, "abroad", "adrenaline","diving", 1, false), 
 ("Austin", 500, "city", "partying", "concert", 4, true),
 ("Denver", 400, "city", "partying", "sporting event", 2, true),
 ("San Diego", 600, "beach", "active", "surfing", 2, false),
