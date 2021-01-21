@@ -18,19 +18,20 @@ if (process.env.JAWSDB_URL) {
 
 const PORT = process.env.PORT || 8080;
 
-// middleware
+// Middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
-// handlebars
+
+// Handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
 // Routes
 // =============================================================
 require("./routes/api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
 
-// Starts the server to begin listening
+// Starts the server to begin listening, and syncs our sequelize models to our DB
 // =============================================================
 
 db.sequelize.sync().then(() => {
