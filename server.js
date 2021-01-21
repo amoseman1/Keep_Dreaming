@@ -3,6 +3,19 @@ const express = require("express");
 const db = require("./models");
 const app = express();
 const exphbs = require("express-handlebars");
+const mysql = require("mysql");
+
+if (process.env.JAWSDB_URL) {
+  connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+  connection = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "Mysqlroot132",
+    database: "travel_db",
+  });
+}
+
 const PORT = process.env.PORT || 8080;
 
 // middleware
