@@ -5,12 +5,35 @@
         <source media="(min-width: 950px)" id="homeBG" style="width:100%" srcset="/assets/Keep-Dreaming-logo.png">
         <img src="/assets/Keep-Dreaming-logo.png" alt="Keep Dreaming Travel App">
         <div id="questions">
-
+            {{!-- //create 6 variables equals to the data-id, var location=getelementby id in front end --}}
             {{#each destinations}}
-            <h1>{{this.name}}</h1>
+            <h3 id="locationItem" data-item-location={{location}}>Your Destination: {{location}}</h3>
+            <p id="costItem" data-item-cost={{cost_pp}}>Cost Per Person: ${{cost_pp}}</p>
+            <p id="genreItem" data-item-genre={{activity_genre}}>Location: {{activity_genre}}</p>
+            <p id="typeItem" data-item-type={{activity_type}}>The Activity Type: {{activity_type}}</p>
+            <p>Ideal # of people: {{number_people}}</p>
+            {{!-- //more icebox: getting the activity-title to render to the dests page --}}
+            {{!-- <p>Try This!: {{activity_title}}</p> --}}
+            <p id="kidFriendlyItem" data-item-kidFriendly={{kid_friendly}}>Is This Activity Kid
+                Friendly? {{kid_friendly}}</p>
             {{/each}}
+
+            <a href="/"><button id="returnHomeBtn">Let's find another destination!!</button></a>
         </div>
     </div>
-    </p>
-    <br>
+
+
+    {{!-- ideally the user save input would go here, but thats in the icebox --}}
+    {{!-- <h5>Save your vacation ideas</h5>
+    <form id="create-form">
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="userName" name="name">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <button type="submit" id="submit">Submit</button>
+    </form> --}}
+
 </main>

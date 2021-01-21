@@ -1,9 +1,8 @@
-//get, post, put, delete routes
-
 const db = require("../models");
 
 module.exports = (app) => {
   //GET routes
+  //HTML route for rendering homepage with index handlebars file
   app.get("/", (req, res) => {
     db.Destination.findAll({}).then((results) =>
       res.render("index", { results })
@@ -14,78 +13,31 @@ module.exports = (app) => {
     db.Users.findAll({}).then((results) => res.status(200).json(results));
   });
 
-  // app.get(
-  //   "/api/destinations/:location/:activiy_genre/:activity_type",
-  //   (req, res) => {
-  //     ///res.render --> handlebars
-  //     db.Destinations.findOne({
-  //       where: {
-  //         location: req.params.location,
-  //         activity_genre: req.params.activity_genre,
-  //         activity_type: req.params.activity_type,
-  //       },
-  //     }).then((results) => res.status(200).json(results)); //res.render
-  //   }
-  // );
-
-  app.get("/dests", (req, res) => {
-    const destObj = {
-      destinations: [{ name: "here" }],
-    };
-    res.render("dests", destObj);
-  });
-
+  //API route for DB query after users choices(params) are gathered
   app.get(
-    "/api/destinations/:cost_pp/:location/:activity_genre",
+    "/api/destinations/:cost_pp/:activity_genre/:activity_type",
     (req, res) => {
-      ///res.render --> handlebars
-      // const budget1 = req.params.budget;
+      // console.log(req.params);
       db.Destination.findAll({
         where: {
           cost_pp: req.params.cost_pp,
-          location: req.params.location,
           activity_genre: req.params.activity_genre,
-          // activity_type: req.params.activity_type,
+          activity_type: req.params.activity_type,
         },
       }).then((results) => {
-        console.log(results);
+        console.log(JSON.parse(JSON.stringify(results)));
         const destObj = {
-          destinations: results,
+          destinations: JSON.parse(JSON.stringify(results)),
         };
         res.render("dests", destObj);
-      }); //res.render
+      });
     }
   );
 
-  // app.get('/api/activitygenres', (req, res) => {
-  //     db.Activitygenres.findAll({}).then((results) => res.status(200).json(results));
-  // });
-
   //POST route creates user info for DB
   app.post("/api/users", (req, res) => {
-    db.User.create({
-      username: req.body.username,
-      email: req.body.email,
-    }).then((results) => res.status(200).json(results));
-  });
-
-  //POST route creates destination choice for DB
-  app.post("/api/destinations", (req, res) => {
-    db.Destination.create({
-      location: req.body.location,
-      cost: req.body.cost,
-    }).then((results) => res.status(200).json(results));
-  });
-
-  //POST route creates activity choice in DB
-  app.post("/api/activitygenres", (req, res) => {
-    db.ActivityGenre.create({
-      active: req.body.active,
-      adrenaline: req.body.adrenaline,
-      volunteering: req.body.volunteering,
-      partying: req.body.partying,
-      spiritual: req.body.spiritual,
-      cultural: req.body.cultural,
-    }).then((results) => res.status(200).json(results));
+    db.User.create(
+      req.body
+    ).then((results) => res.status(200).json(results));
   });
 };

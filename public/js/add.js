@@ -1,16 +1,11 @@
-// what does this refer to?
-
+//makes sure the handlebars loads before js
 document.addEventListener("DOMContentLoaded", (event) => {
   if (event) {
     console.info("DOM loaded");
   }
 
-  //event listeners and api fetchs on front-end
+  //questions displayed to user one at a time
   const allQuestions = [
-    // {
-    //   question: "How many people are in your party?",
-    //   choices: ["1", "2", "3", "4", "5+"],
-    // },
     {
       question: "What is your budget?",
       choices: [
@@ -40,8 +35,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
     },
   ];
 
-  // starter function (wrapper)- for loop to iterate through objects, and display questions and choices separately (questions.question or questions.choices)
   var i = 0;
+  //empty array for users choices
   const selection = [];
 
   function init() {
@@ -54,59 +49,68 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const choices = allQuestions[i].choices;
 
     choices.forEach((button) => {
-      // console.log(button);
       const body = document.getElementById("answers");
       const buttonMaker = document.createElement("button");
       buttonMaker.setAttribute("class", "button");
       buttonMaker.textContent = button;
       body.appendChild(buttonMaker);
 
-      // if (i === 2) {
-      //   buttonMaker.setAttribute("href", "/dests");
-      // }
-
+      //event listener on choice pushes users choice to array
       buttonMaker.addEventListener("click", function (event) {
         const userChoice = event.target.textContent;
         selection.push(userChoice);
         i++;
-
+        //clears the container for the next question and choices
         questionText.textContent = "";
         body.innerHTML = "";
         console.log("------------------selection-------------------");
         console.log(selection);
 
+        // if the user had gone through all the questions, call the callData function to render query
         if (allQuestions[i] === undefined) {
           callData();
-        } else {
+        }
+        //otherwise go to the next question (our loop attribute for the questions)
+        else {
           init();
         }
       });
     });
   }
 
+  //fetches our backend query after questions have ended and we have user input
   function callData() {
-    const budget1 = selection[0].substring(2, selection[0].length);
+    const budget1 = parseInt(selection[0].substring(2, selection[0].length));
+    selection[1] = selection[1].toLowerCase();
 
-    fetch(`/api/destinations/${budget1}/${selection[1]}/${selection[2]}`, {
+    let queryUrl = `/api/destinations/${budget1}/${selection[1]}/${selection[2]}`
+    fetch(queryUrl, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     })
-      .then((data) => console.log(data))
+      //replaces the url from home page, with the query where data is rendered
+      .then((data) => window.location.replace(queryUrl))
       .catch((err) => console.error(err));
   }
 
   const submitButton = document.getElementById("submit");
-
   submitButton.addEventListener("click", (event) => {
     event.preventDefault();
 
     const newUser = {
       username: document.getElementById("userName").value.trim(),
       email: document.getElementById("email").value.trim(),
+      //this is icebox functionality to get the users saved destinations info to show on for that user
+      // location: document.getElementById("locationItem").getatrribute("data-item-location"),
+      // location: document.getElementById("costItem").getatrribute("data-item-cost"),
+      // location: document.getElementById("genreItem").getatrribute("data-item-genre"),
+      // location: document.getElementById("typeItem").getatrribute("data-item-type"),
+      // location: document.getElementById("kidFriendlyItem").getatrribute("data-item-kidFriendly")
     };
 
+    //post routw to save the user, emai, and returned location info from DB
     fetch("/api/users", {
       method: "POST",
       headers: {
@@ -118,6 +122,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       .then((data) => {
         console.log(data);
       });
+    //clears out form after user input is submitted 
+    document.getElementById("userName").value = "";
+    document.getElementById("email").value = "";
   });
 
   init();
