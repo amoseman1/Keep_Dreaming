@@ -43,35 +43,27 @@ document.addEventListener("DOMContentLoaded", (event) => {
   // starter function (wrapper)- for loop to iterate through objects, and display questions and choices separately (questions.question or questions.choices)
   var i = 0;
   const selection = [];
-  function init() {
-    // allQuestions.forEach((question) =>
-    // console.log(question);
 
+  function init() {
     const theQuestions = document.getElementById("questions");
     const questionText = document.createTextNode(allQuestions[i].question);
-    // console.log("---------------question -----------------");
-    // console.log(theQuestions);
-    // theQuestions.innerHTML = "";
-    // console.log("---------------Text -----------------");
-    // console.log(questionText);
 
     theQuestions.prepend(questionText);
-    // translate to handlebars or front end?
 
     // this selects the choices of the object array
     const choices = allQuestions[i].choices;
-    // does this need to be in a loop to pull each choice? or is the big overall loop appropriate?
+
     choices.forEach((button) => {
       // console.log(button);
       const body = document.getElementById("answers");
-      const buttonMaker = document.createElement("a");
+      const buttonMaker = document.createElement("button");
       buttonMaker.setAttribute("class", "button");
       buttonMaker.textContent = button;
       body.appendChild(buttonMaker);
 
-      if (i === 2) {
-        buttonMaker.setAttribute("href", "/dests");
-      }
+      // if (i === 2) {
+      //   buttonMaker.setAttribute("href", "/dests");
+      // }
 
       buttonMaker.addEventListener("click", function (event) {
         const userChoice = event.target.textContent;
@@ -89,29 +81,11 @@ document.addEventListener("DOMContentLoaded", (event) => {
           init();
         }
       });
-      // button.innerHTML = choices; // dynamic?
-
-      // console.log("---------------button maker -----------------");
-      // console.log(buttonMaker);
-
-      // console.log("---------------body -----------------");
-      // console.log(body);
-
-      // button.addEventListener("click", function () {
-
-      //   selection.push(button.innerHTML);
-      // });
     });
   }
 
   function callData() {
     const budget1 = selection[0].substring(2, selection[0].length);
-
-    //     switch(choices){
-    // case ""
-    //const data = {cost_pp: budget1, location: selection[1], activity_genre: selection[2]}
-    //     }
-    console.log("calling /api/dest");
 
     fetch(`/api/destinations/${budget1}/${selection[1]}/${selection[2]}`, {
       method: "GET",
@@ -122,6 +96,29 @@ document.addEventListener("DOMContentLoaded", (event) => {
       .then((data) => console.log(data))
       .catch((err) => console.error(err));
   }
+
+  const submitButton = document.getElementById("submit");
+
+  submitButton.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    const newUser = {
+      username: document.getElementById("userName").value.trim(),
+      email: document.getElementById("email").value.trim(),
+    };
+
+    fetch("/api/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      });
+  });
 
   init();
 });

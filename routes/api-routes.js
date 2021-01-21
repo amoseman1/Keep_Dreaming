@@ -29,24 +29,10 @@ module.exports = (app) => {
   // );
 
   app.get("/dests", (req, res) => {
-    // const destObj = {
-    //   destinations: [{ name: "here" }],
-    // };
-    // res.render("dests", destObj);
-    db.Destination.findAll({
-      where: {
-        cost_pp: req.params.cost_pp,
-        location: req.params.location,
-        activity_genre: req.params.activity_genre,
-        // activity_type: req.params.activity_type,
-      },
-    }).then((results) => {
-      console.log(results);
-      const destObj = {
-        destinations: results,
-      };
-      res.render("dests", destObj);
-    }); //res.render
+    const destObj = {
+      destinations: [{ name: "here" }],
+    };
+    res.render("dests", destObj);
   });
 
   app.get(
