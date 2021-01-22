@@ -100,7 +100,9 @@ h4 {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   background-image: linear-gradient(yellow, #c26c0a);
-  padding: 10px;
+  padding: 0px;
+  margin-top: 20px;
+  opacity: 90%;
 }
 
 h5 {
@@ -110,7 +112,7 @@ h5 {
 }
 
 #form-group {
-  padding: 5px;
+  padding-left: 150px;
 }
 
 @-webkit-keyframes glow {
