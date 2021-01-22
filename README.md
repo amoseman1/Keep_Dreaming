@@ -1,6 +1,6 @@
 # Keep Dreaming
 
-<img src = "./public/assets/screenshot.png" alt="Keep Dreaming Screenshot">
+<img src = "screenshot.png" alt="Keep Dreaming Screenshot">
 
 ## Project Description
 
