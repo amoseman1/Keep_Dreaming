@@ -12,8 +12,8 @@ if (process.env.JAWSDB_URL) {
 } else {
   connection = mysql.createConnection({
     host: "localhost",
-    user: "root",
-    password: "Mysqlroot132",
+    user: process.env.DB_USER,
+    password: process.env.DB_PW,
     database: "travel_db",
   });
 }
