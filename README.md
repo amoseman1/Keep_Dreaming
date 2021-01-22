@@ -1,6 +1,6 @@
 # Keep Dreaming
 
-<img src = "screenshot.png" alt="Keep Dreaming Screenshot">
+<img src = "Screenshot.png" alt="Keep Dreaming Screenshot">
 
 ## Project Description
 
