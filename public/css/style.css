@@ -1,16 +1,19 @@
 /* Sets browser styling and background*/
 html {
   max-width: 1536px;
+  height: 2000px;
   margin: 0 auto;
   background-color: black;
+  margin-bottom: 1000px;
 }
 body {
   background-image: url(../assets/KeepDreaming-home-background.jpg);
   opacity: 100%;
   background-repeat: no-repeat;
-  margin: 0;
-  padding: 0;
+  margin-top: 0px;
+  margin-bottom: 2000px !important;
 }
+​
 /* Sets responsive parent flexbox container*/
 .container {
   display: flex;
@@ -35,6 +38,7 @@ body {
   color: white;
   max-width: 34.3%;
   padding-top: 260px;
+  margin-bottom: 1000px;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
@@ -62,13 +66,27 @@ body {
   background-color: #c26c0a;
   color: white;
 }
+#submit {
+  background-image: linear-gradient(yellow, #c26c0a);
+  color: black;
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 10px;
+  margin-left: 88px;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+#submit:hover {
+  background-color: #c26c0a;
+  color: white;
+}
 /* styles text in questions and answers */
 p {
   text-align: center;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   font-size: 20px;
-  color: white;
+  color: yellow;
   text-align: center;
   text-shadow: 2px 2px 5px black;
 }
@@ -82,8 +100,7 @@ h4 {
   -moz-animation: glow 1s ease-in-out infinite alternate;
   animation: glow 1s ease-in-out infinite alternate;
 }
-
-#returnHomeBtn {
+​ #returnHomeBtn {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   text-align: center;
@@ -93,27 +110,28 @@ h4 {
   background-image: linear-gradient(yellow, #c26c0a);
   padding: 10px;
 }
-
-#signupForm {
+​ #signupForm {
   border: solid, 5px;
-  border-radius: 10px;
+  border-radius: 20px;
+  align-content: center;
+  width: 570px;
+  height: 150px;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
   background-image: linear-gradient(yellow, #c26c0a);
-  padding: 10px;
+  padding: 0px;
+  margin-top: 20px;
+  opacity: 90%;
 }
-
-h5 {
+​ h5 {
   font-size: 20px;
   text-align: center;
   margin-top: 5px;
 }
-
-#form-group {
-  padding: 5px;
+​ form {
+  padding-left: 150px;
 }
-
-@-webkit-keyframes glow {
+​ @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px black, 0 0 20px black, 0 0 30px black, 0 0 40px white;
   }
