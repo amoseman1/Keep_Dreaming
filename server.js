@@ -5,6 +5,8 @@ const app = express();
 const exphbs = require("express-handlebars");
 const mysql = require("mysql");
 
+//do i move this to config.js
+//does this hide my credentials somehow?
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
 } else {
