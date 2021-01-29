@@ -4,17 +4,14 @@ const db = require("./models");
 const app = express();
 const exphbs = require("express-handlebars");
 const mysql = require("mysql");
-
-//do i move this to config.js
-//does this hide my credentials somehow?
-if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
+const use_env_variable = false;
+if (use_env_variable) {
+  connection = mysql.createConnection(use_env_variable);
 } else {
   connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "Mysqlroot132",
-    database: "travel_db",
+   
+    use_env_variable: "JAWSDB_URL",
+    dialect: "mysql",
   });
 }
 
