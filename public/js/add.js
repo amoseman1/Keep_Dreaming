@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       headers: {
         "Content-Type": "application/json",
       },
-    })
+    }) 
       //replaces the url from home page, with the query where data is rendered
       .then((data) => window.location.replace(queryUrl))
       .catch((err) => console.error(err));
