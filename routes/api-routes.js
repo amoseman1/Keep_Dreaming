@@ -17,6 +17,7 @@ module.exports = (app) => {
   app.get(
     "/api/destinations/:cost_pp/:activity_genre/:activity_type",
     (req, res) => {
+      res.setHeader('Access-Control-Allow-Origin', '*');
       // console.log(req.params);
       db.Destination.findAll({
         where: {
