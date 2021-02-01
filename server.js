@@ -4,7 +4,7 @@ const db = require("./models");
 const app = express();
 const exphbs = require("express-handlebars");
 const mysql = require("mysql");
-herok
+
 
 const PORT = process.env.PORT || 8080;
 
