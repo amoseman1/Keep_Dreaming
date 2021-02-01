@@ -4,16 +4,7 @@ const db = require("./models");
 const app = express();
 const exphbs = require("express-handlebars");
 const mysql = require("mysql");
-const use_env_variable = false;
-if (use_env_variable) {
-  connection = mysql.createConnection(use_env_variable);
-} else {
-  connection = mysql.createConnection({
-   
-    use_env_variable: "JAWSDB_URL",
-    dialect: "mysql",
-  });
-}
+herok
 
 const PORT = process.env.PORT || 8080;
 

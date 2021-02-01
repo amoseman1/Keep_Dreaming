@@ -1,8 +1,6 @@
 # Keep Dreaming
 
-
 <img src = "/public/assets/Screenshot.png" alt="Keep Dreaming Screenshot">
-
 
 ## Project Description
 
@@ -34,19 +32,17 @@ npm i
 
 ## Links
 
-- Gitub: https://sterlingorth.github.io/Keep_Dreaming/
+- Gitub: https://github.com/amoseman1/Keep_Dreaming
 
 - Source Code: https://github.com/SterlingOrth/Keep_Dreaming.git
 
-- Heroku: https://frozen-journey-37808.herokuapp.com/
+- Heroku Deployed App: https://warm-earth-65577.herokuapp.com/
 
 ## Contributing
 
 - Kasey Raymond ~ Github: [KcRaymond](https://github.com/kcraymond)
 - Amy Moseman ~ Github: [amoseman1](https://github.com/amoseman1)
 - Kristabell Johnson ~ Github: [Kristabell74](https://github.com/kristabell74)
-- Michael Hutchings ~ Github: [MHutchbot](https://github.com/mhutchbot)
-- Sterling Orth ~ Github: [SterlingOrth](https://github.com/sterlingorth)
 - Shawn McPhee ~ GitHub: [scmcphee9](https://github.com/scmcphee9)
 
 ## Questions?
