@@ -36,7 +36,7 @@ npm i
 
 - Source Code: https://github.com/SterlingOrth/Keep_Dreaming.git
 
-- Heroku Deployed App: https://warm-earth-65577.herokuapp.com/
+- Heroku Deployed App: https://frozen-journey-37808.herokuapp.com/
 
 ## Contributing
 
@@ -44,6 +44,7 @@ npm i
 - Amy Moseman ~ Github: [amoseman1](https://github.com/amoseman1)
 - Kristabell Johnson ~ Github: [Kristabell74](https://github.com/kristabell74)
 - Shawn McPhee ~ GitHub: [scmcphee9](https://github.com/scmcphee9)
+- Sterlin Orth ~ Github: [SterlingOrth](https://github.com/SterlingOrth)
 
 ## Questions?
 
